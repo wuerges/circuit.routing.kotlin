@@ -79,7 +79,55 @@ class Sequence(val gs : List<Grammar<out Any>>) : Grammar<List<Any>>()
         }
         return Pair(l.toList(), p)
     }
+}
 
+class Many<T>(val g : Grammar<T>) : Grammar<List<T>>() {
+    override fun check(input: Parse): Pair<List<T>, Parse> {
+        var p = input
+        val l = ArrayList<T>()
+        while (true) {
+            try {
+                val (a, p2) = g.check(p)
+                l.add(a)
+                p = p2
+            }
+            catch (e : ParseError) {
+                break
+            }
+        }
+        return Pair(l.toList(), p)
+    }
+}
+
+class Optional<T>(val g : Grammar<T>) : Grammar<T?>() {
+    override fun check(input: Parse): Pair<T?, Parse> {
+        try {
+            return g.check(input)
+        }
+        catch (e : ParseError) {
+            return Pair(null, input)
+        }
+    }
+}
+
+class Many1<T>(val g : Grammar<T>) : Grammar<List<T>>() {
+    override fun check(input: Parse): Pair<List<T>, Parse> {
+        val (a1, p1) = g.check(input)
+        var p = p1
+        val l = ArrayList<T>()
+        l.add(a1)
+        while (true) {
+            try {
+                val (a, p2) = g.check(p)
+                l.add(a)
+                p = p2
+            }
+            catch (e : ParseError) {
+                break
+            }
+        }
+        return Pair(l.toList(), p)
+    }
 }
 
 operator fun<T1, T2> Grammar<T1>.plus(b : Grammar<T2>): Grammar<Either<T1, T2>> {
@@ -122,7 +170,11 @@ fun main() {
 
     val t3 = Sequence(listOf(num, ws, num, ws, (num + txt)))
 
+    val t4 = Many(Map(num * ws) { (a,_) -> a })
+    val t5 = Many(Map(num * ws) { (a,_) -> a })
 
     println(parseToEnd(text, t2))
     println(parseToEnd(text, t3))
+    println(parseToEnd("1 2 3 4 5", t4))
+    println(parseToEnd("1 2 3 4 5", t5))
 }
