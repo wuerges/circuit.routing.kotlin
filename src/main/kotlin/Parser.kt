@@ -15,8 +15,8 @@ class Parser(val i : Int, val text : String) {
 }
 
 sealed class Either<A, B>
-class Left<A, B>(val left: A) : Either<A, B>()
-class Right<A, B>(val right: B) : Either<A, B>()
+data class Left<A, B>(val left: A) : Either<A, B>()
+data class Right<A, B>(val right: B) : Either<A, B>()
 
 abstract class Grammar<T> {
     abstract fun check(input : Parser) : Pair<T, Parser>
@@ -59,7 +59,13 @@ class And<T1, T2>(val g1: Grammar<T1>, val g2: Grammar<T2>) : Grammar<Pair<T1, T
     }
 }
 
+operator fun<T1, T2> Grammar<T1>.plus(b : Grammar<T2>): Grammar<Either<T1, T2>> {
+    return Or<T1, T2>(this, b)
+}
 
+operator fun<T1, T2> Grammar<T1>.times(b : Grammar<T2>): Grammar<Pair<T1, T2>> {
+    return And<T1, T2>(this, b)
+}
 
 
 class Token(val text : String) : Grammar<String>() {
@@ -76,12 +82,14 @@ class Token(val text : String) : Grammar<String>() {
 
 
 fun main() {
-    val x = Parser(0, "123 456")
+    val x = Parser(0, "123 456 aaa")
 
     val ws = Token("\\s*")
 
-    val t = Map(Token("\\d+"), { it.toInt() })
-    val t2 = And(t, And(ws, t))
+    val num = Map(Token("\\d+"), { it.toInt() })
+    val txt = Token("\\w+")
+
+    val t2 = num * ws * num * ws * (num + txt)
 
 
     println(t2.check(x))
