@@ -14,6 +14,9 @@ data class Spacing(val num : Int) : Expression()
 data class ViaCost(val num : Int) : Expression()
 data class Boundary(val boundary : Rect) : Expression()
 data class MetalLayers(val num : Int) : Expression()
+data class RoutedVias(val num : Int) : Expression()
+data class RoutedShapes(val num : Int) : Expression()
+data class Obstacles(val num : Int) : Expression()
 
 object CircuitGrammar : Grammar<Mask>() {
     val numT by token("\\d+")
@@ -33,14 +36,22 @@ object CircuitGrammar : Grammar<Mask>() {
     val rect by pointExpr * -ws * pointExpr * -ws
     val rectExpr by rect use { Rect(t1, t2) }
 
+    val layerT by token("[MV]\\d+")
+    val layer by layerT * -ws
+
+
     val spacingT by token("Spacing")
     val viaCostT by token("ViaCost")
     val boundaryT by token("Boundary")
     val metalLayersT by token("#MetalLayers")
     val routedViasT by token("#RoutedVias")
     val obstaclesT by token("#Obstacles")
-    val routedShapeT by token("RoutedShape")
+    val routedShapesT by token("#RoutedShapes")
+//    val routedShapeT by token("RoutedShape")
+//    val routedViaT by token("RoutedVia")
 
+//    val routedShape by -routedShapeT * -ws * layer * rectExpr * -ws * -eol
+//    val routedVia by -routedViaT * -ws * layer * pointExpr * -ws * -eol
 
 
     val definition by -ws * -eq * -ws * num * -ws * -eol
@@ -48,14 +59,21 @@ object CircuitGrammar : Grammar<Mask>() {
     val viaCost by -viaCostT * -ws * definition
     val boundary by -boundaryT * -ws * -eq * -ws * rectExpr * -eol
     val metalLayers by -metalLayersT * definition
+    val routedVias by -routedViasT * definition
+    val obstacles by -obstaclesT * definition
+    val routedShapes by -routedShapesT * definition
 
     val spacingExpr by spacing use { Spacing(this) }
     val viaCostExpr by viaCost use { ViaCost(this) }
     val boundaryExpr by boundary use { Boundary(this) }
     val metalLayersExpr by metalLayers use { MetalLayers(this)}
+    val routedViasExpr by routedVias use { RoutedVias(this)}
+    val obstaclesExpr by obstacles use { Obstacles(this)}
+    val routedShapesExpr by routedShapes use { RoutedShapes(this)}
 
 
-    val expression by viaCostExpr or spacingExpr or boundaryExpr or metalLayersExpr
+    val expression by (viaCostExpr or spacingExpr or boundaryExpr or obstaclesExpr
+            or metalLayersExpr or routedViasExpr or routedShapesExpr)
 
     val mask by oneOrMore(expression) use { Mask(this) }
 
@@ -67,7 +85,10 @@ fun main(args: Array<String>) {
     val expr = "ViaCost=10\n"+
             "Spacing = 8\n" +
             "Boundary = (0,0) (7000,3000)\n" +
-            "#MetalLayers = 3\n"
+            "#MetalLayers = 3\n"+
+            "#RoutedShapes = 10\n" +
+            "#RoutedVias = 3\n" +
+            "#Obstacles = 10\n"
 //    val expr = "ViaCost = 10\n" +
 //            "Spacing = 8\n" +
 //            "Boundary = (0,0) (7000,3000)\n" +
