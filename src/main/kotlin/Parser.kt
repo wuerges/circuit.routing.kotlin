@@ -1,6 +1,7 @@
 import java.lang.Exception
 
-class Error(val i : Int, val text : String, error : String) : Exception(error)
+class Error(i : Int, text : String, error : String)
+    : Exception(error + ":" + Parser(i, text))
 
 class Parser(val i : Int, val text : String) {
     fun fail(message :String) : Error {
@@ -86,10 +87,10 @@ fun main() {
 
     val ws = Token("\\s*")
 
-    val num = Map(Token("\\d+"), { it.toInt() })
+    val num = Map( Token("\\d+") ) { it.toInt() }
     val txt = Token("\\w+")
 
-    val t2 = num * ws * num * ws * (num + txt)
+    val t2 = num * ws * num * ws * (num + txt) * ws * num
 
 
     println(t2.check(x))
