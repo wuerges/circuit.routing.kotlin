@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7623901-201e-45f4-80f6-879e1bf98ffb" name="Default Changelist" comment="">
+    <list default="true" id="f7623901-201e-45f4-80f6-879e1bf98ffb" name="Default Changelist" comment="Sequence OK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Parser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Parser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Parser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Parse.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -29,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
+            <state relative-caret-position="540">
               <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
               <folding>
                 <element signature="e#0#315#0" expanded="true" />
@@ -39,10 +39,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Parser.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Parse.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+            <state relative-caret-position="-856">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -67,6 +67,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Parser</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -78,6 +83,7 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/ArithmeticEvaluator.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Parser.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/Parse.kt" />
       </list>
     </option>
   </component>
@@ -142,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ParserKt">
+  <component name="RunManager" selected="Kotlin.ParseKt">
     <configuration name="ArithmeticEvaluatorKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="circuit.routing.main" />
       <option name="VM_PARAMETERS" />
@@ -169,14 +175,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="ParseKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="circuit.routing.main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ParserKt" />
+      <option name="MAIN_CLASS_NAME" value="ParseKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,7 +190,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ParserKt" />
+        <item itemvalue="Kotlin.ParseKt" />
         <item itemvalue="Kotlin.CircuitParserKt" />
         <item itemvalue="Kotlin.ArithmeticEvaluatorKt" />
       </list>
@@ -254,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559427561595</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="base case ok">
+      <created>1559429614886</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559429614886</updated>
+    </task>
+    <task id="LOCAL-00010" summary="or and and operators working!">
+      <created>1559429976359</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559429976359</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -271,7 +291,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.3295099" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295099" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32012513" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -292,7 +312,9 @@
     <MESSAGE value="Creating my own parser library" />
     <MESSAGE value="trying either" />
     <MESSAGE value="base case ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="base case ok" />
+    <MESSAGE value="or and and operators working!" />
+    <MESSAGE value="Sequence OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sequence OK" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -328,7 +350,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
+        <state relative-caret-position="540">
           <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding>
             <element signature="e#0#315#0" expanded="true" />
@@ -336,10 +358,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Parser.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Parse.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+        <state relative-caret-position="-856">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
