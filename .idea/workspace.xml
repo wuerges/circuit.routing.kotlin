@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7623901-201e-45f4-80f6-879e1bf98ffb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Parse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Parse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+            <state relative-caret-position="-1458">
+              <caret line="6" selection-start-line="6" selection-end-line="18" selection-end-column="50" />
               <folding>
                 <element signature="e#0#315#0" expanded="true" />
               </folding>
@@ -40,17 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/Parse.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="177" column="33" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.h0tk3y.betterParse/better-parse-jvm/0.4.0-alpha-3/85dc754d27fe74e4809cebd1d201d99e9dd11f59/better-parse-jvm-0.4.0-alpha-3-sources.jar!/commonMain/com/github/h0tk3y/betterParse/grammar/Grammar.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="2429">
+              <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -80,8 +71,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.gradle.kts" />
         <option value="$PROJECT_DIR$/src/main/kotlin/ArithmeticEvaluator.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Parser.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Parse.kt" />
       </list>
     </option>
@@ -280,7 +271,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559432094966</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactored class names&#10;and added parseToEnd">
+      <created>1559432847927</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559432847927</updated>
+    </task>
+    <task id="LOCAL-00013" summary="parse completo, mas resultado esta confuso">
+      <created>1559439630329</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1559439630329</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -290,7 +295,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Designer" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24972618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19715224" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
@@ -298,7 +303,7 @@
       <window_info anchor="bottom" id="Build" weight="0.3295099" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295099" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32012513" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.270073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -321,7 +326,8 @@
     <MESSAGE value="or and and operators working!" />
     <MESSAGE value="Sequence OK" />
     <MESSAGE value="Refactored class names&#10;and added parseToEnd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored class names&#10;and added parseToEnd" />
+    <MESSAGE value="parse completo, mas resultado esta confuso" />
+    <option name="LAST_COMMIT_MESSAGE" value="parse completo, mas resultado esta confuso" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -338,13 +344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.h0tk3y.betterParse/better-parse-jvm/0.4.0-alpha-3/85dc754d27fe74e4809cebd1d201d99e9dd11f59/better-parse-jvm-0.4.0-alpha-3-sources.jar!/commonMain/com/github/h0tk3y/betterParse/grammar/Grammar.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/ArithmeticEvaluator.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -355,10 +354,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.h0tk3y.betterParse/better-parse-jvm/0.4.0-alpha-3/85dc754d27fe74e4809cebd1d201d99e9dd11f59/better-parse-jvm-0.4.0-alpha-3-sources.jar!/commonMain/com/github/h0tk3y/betterParse/grammar/Grammar.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/CircuitParser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state relative-caret-position="-1458">
+          <caret line="6" selection-start-line="6" selection-end-line="18" selection-end-column="50" />
           <folding>
             <element signature="e#0#315#0" expanded="true" />
           </folding>
@@ -367,8 +373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/Parse.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="177" column="33" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="33" />
+        <state relative-caret-position="2429">
+          <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
         </state>
       </provider>
     </entry>
